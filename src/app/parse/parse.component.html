@@ -1,0 +1,46 @@
+<!--<p-growl [(value)]="msgs"></p-growl> Alert user to select plot-->
+<div *ngIf=dataProvider.redirectChart> 
+  <div id="main">
+    <div class=".container-fluid">  <!--Page resizes to fit size of window-->
+      <!--<div on-mouseover='changeShowStatus()' style="height:50px; width:100px; background:#e2e2e2">SHOW/HIDE Plot Options</div>-->
+      <div *ngIf="rData.showHide">
+        <div *ngIf="rData.showXYDropdown">
+        <div class="noPadding">
+            <!--   grid layout class -->
+            <div class="sidebar">     <!--   grid layout class (to the side) -->
+              <div style="padding:0px;margin:0px">  <!--    double line outline -->    
+            
+                <div *ngIf="dataProvider.showDropDown; else disabledDropDown">  
+                    <input type="file" (change)="changeListener($event)" (click)="setFalse()" #input/> <!--Upon click, clears Plot-->
+                    <div style="padding:0;margin:20px 0px;">
+                      <p style="display:inline; font-size:24px"><b>X Value:</b></p><select style="padding:1px;float:center"  (change)="firstDropDownChanged($event.target.selectedIndex - 1)">
+                      <option>Select</option>
+                      <option *ngFor='let v of dataProvider.values1'>{{ v.label }}</option>
+                      </select><br>     
+                    </div>
+                  <div style="padding:0;margin:20px 0px">
+                    <p style="display:inline;font-size:24px"><b>Y Value:</b></p><p-multiSelect [options]="values2" [(ngModel)]="dataProvider.selectedValues2"></p-multiSelect><br>
+                  </div>   
+                  <button class="sidenavbtn" (click)="loadData();hideThis();typeSetTrue()"><b>Next</b></button>   
+               </div>
+
+
+              <ng-template #disabledDropDown>      
+                  <input type="file" (change)="changeListener($event)" (click)="setFalse()" #input disabled/> <!--Upon click, clears Plot-->         
+                  <select (change)="firstDropDownChanged($event.target.selectedIndex - 1); loadData()" disabled>
+                  <option></option>
+                  <option *ngFor='let v of dataProvider.values1'>{{ v.label }}</option>
+                  </select>  <br>    
+              
+                <p-multiSelect [options]="values2" [(ngModel)]="dataProvider.selectedValues2" disabled></p-multiSelect><br><!--values1&2: name is title, value is index-->
+                <button class="sidenavbtn" (click)="loadData();hideThis();typeSetTrue()" disabled><b>Next</b></button> 
+              </ng-template>    
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+.example-spacer{flex: 1 1 auto;}
+.example-spacer2{padding:0px 12px 0px;}
+.sidebar {grid-area: sidebar;}
+
+.content {grid-area: content;}
+.mat-icon.md-18 { font-size: 18px; }
+.mat-icon.md-24 { font-size: 24px;}
+.mat-icon.md-36 { font-size: 36px;}
+.mat-icon.md-48 { font-size: 48px; }
+
+.header {grid-area: header;
+    padding:0px;
+    margin:0px;
+  /*  position:absolute;
+
+    top:0;*/
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 0px;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+    "header header"
+    "sidebar content"; 
+}
+
+.noPadding{padding:0px;}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #808009;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;  
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover,.closebtn:hover{
+    color: #f1f1f1;
+}
+.sidenav .closebtn {
+    position: absolute;
+    color: #333;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.clicked{
+    color:white;
+}
+.notClicked{
+    color:black;
+}
+.notClicked:hover{
+    color:#f1f1f1;
+}
+.refreshbtn {
+    position: absolute;
+    color: #333;
+    top: 3;
+    left: 52px;
+    font-size: 36px;
+    margin-left: 120px;
+}
+.refreshbtn:hover{
+
+    color:#f1f1f1;
+}
+.sidenavbtn{
+    background:#333;
+    color:#808009;
+}
+.sidenavbtn:hover{
+    background:white;
+    color:black;
+}
+
+.header span:hover,.header button:hover{
+    color: #f1f1f1;
+}
+
+#main {
+    transition: margin-right .5s;
+    padding: 16px;
+    
+}
+#homeButtonOn, #infoButtonOn{
+    color:white;
+}
+
+#container { 
+    height:90%;
+    width:97.5%;
+    position:absolute;
+    
+}

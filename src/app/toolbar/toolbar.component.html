@@ -1,0 +1,81 @@
+<div *ngIf="dataProvider.showToolbar" style="padding:0px;margin:0px">
+   <div id="main" style="margin-left:350px">
+    <div class=".container-fluid">  <!--Page resizes to fit size of window-->
+     <div class="wrapper" style="-webkit-margin-before:0px;-webkit-margin-after:0px;padding:0px;margin:0px">  
+     
+      <!-- <span>Sensit</span><span style="color:Yellow">Tech</span>-->
+        <div *ngIf="dataProvider.onHomePage">
+          <md-toolbar class="header" style="background:grey; color:black"> 
+            <div *ngIf="wasClicked; else closed">
+              <button class="clicked" data-balloon="Settings" data-balloon-pos="right" style="cursor:pointer" (click)="openNav2()" md-icon-button><md-icon>view_headline</md-icon></button>
+            </div>
+            <ng-template #closed>
+              <button class="notClicked" data-balloon="Settings" data-balloon-pos="right" style="cursor:pointer" (click)="openNav2()" md-icon-button><md-icon>view_headline</md-icon></button>
+            </ng-template>
+            <span class="example-spacer2"></span>
+            <img src="assets/images/logo.png" alt="SensitTech" height="50" width="90" (click)="goToHomePage()"/>
+            <span class="example-spacer"></span>
+            <button id="homeButtonOn" data-balloon="Home" data-balloon-pos="down" (click)="goToChartPage()" md-icon-button><md-icon>home</md-icon></button>
+            <button data-balloon="Info" data-balloon-pos="down" (click)="goToInfoPage()" md-icon-button><md-icon>info</md-icon></button>
+        </md-toolbar>
+        <div *ngIf="dataProvider.showChart">
+          <chart id="container" [options]="options"></chart> 
+        </div>
+          
+        </div>
+        <div *ngIf="dataProvider.onInfoPage">
+         <md-toolbar class="header" style="background:grey; color:black"> 
+            <button data-balloon="Settings" data-balloon-pos="right" style="cursor:pointer;color:rgba(29, 27, 27, 0.08)" (click)="openNav2()" disabled md-icon-button><md-icon>view_headline</md-icon></button>
+            <span class="example-spacer2"></span>
+            <img src="assets/images/logo.png" alt="SensitTech" height="50" width="90" (click)="goToHomePage()"/>
+            <span class="example-spacer"></span>
+            <button data-balloon="Home" data-balloon-pos="down" (click)="goToChartPage()" md-icon-button><md-icon>home</md-icon></button>
+          <button id="infoButtonOn" data-balloon="Info" data-balloon-pos="down" (click)="goToInfoPage()" md-icon-button><md-icon>info</md-icon></button>
+        </md-toolbar>
+        </div>       
+      
+    
+      <script src="/node_modules/angular/angular.js"></script> 
+      <script src="/node_modules/angular-aria/angular-aria.js"></script> 
+      <script src="/node_modules/angular-animate/angular-animate.js"></script> 
+      <script src="/node_modules/angular-material/angular-material.js"></script> 
+
+      <md-menu #appMenu="mdMenu">
+        <p> Add user options here</p>
+        <button md-menu-item> Settings </button>
+        <button md-menu-item> Logout </button>
+      </md-menu>
+    </div>
+
+    <div id="mySidenav2" class="sidenav" style="width:350px"> <!--side menu-->
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav2()">&times;</a>
+        <button class="refreshbtn" (click)="refresh()" style="cursor:pointer" md-icon-button><md-icon>refresh</md-icon></button> 
+        <h2 color="black" style="padding:0px 50px 0px;font-size:36px"><b><u>Settings</u></b></h2>   
+        <app-parse></app-parse> 
+        <div *ngIf="dataProvider.showTypes"> <!--If GO button is pushed-->
+          <div style="padding:0;margin:22px 0px">
+              <p style="display:inline;font-size:24px"><b>Title:</b></p>
+              <input style="float:center;width:110px;height:22px" id="input" type="text" pInputText [(ngModel)]="dataProvider.devChartTitle">        
+          </div>
+          <div style="padding:0;margin:22px 0px">
+            <p style="display:inline;font-size:24px"><b>X Axis Label:</b></p>
+            <input style="float:center;width:110px;height:22px" id="input" type="text" size="10" pInputText [(ngModel)]="dataProvider.xAxisLabel"> 
+          </div>
+          <div style="padding:0;margin:22px 0px">
+            <p style="display:inline;font-size:24px"><b>Y Axis Label:</b></p>
+            <input style="float:center;width:110px;height:22px" id="input" type="text" size="10" pInputText [(ngModel)]="dataProvider.yAxisLabel"> 
+          </div>
+         
+
+          <p><u>Please select a chart type:</u></p>   
+          <p-dropdown [options]="chartTypes" [(ngModel)]="selectedType" placeholder="Select" (onChange)="dataChanger($event.value);plotButtonFalse()"></p-dropdown>
+          <p><span>Selected Type: </span><span class="capitalize" style="color:darkblue">{{dataProvider.type}}</span></p> <!--Different plot types-->
+          <button class="sidenavbtn" style="width:95px;height:35px;font-size:22px;padding:0px;margin:0px 75px 0px 120px;cursor:pointer" (click)="plotButtonTrue()"><b>Plot</b></button>
+        </div>     
+      </div>      
+      
+
+  </div>
+</div> 
+
+</div>

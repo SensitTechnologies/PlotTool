@@ -1,0 +1,22 @@
+.button {
+    background-color:#333;
+    color:yellow;
+    width:250px;
+    height:70px;
+   
+}
+
+.button:hover{
+    background-color:White;
+    color:#333;
+}
+
+#centered{
+     display:flex;
+     justify-content: center; 
+     vertical-align: middle;
+} 
+#main {
+    transition: margin-right .5s;
+    padding: 16px;
+}
