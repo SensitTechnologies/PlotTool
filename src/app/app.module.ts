@@ -13,7 +13,6 @@ import { CommonModule, NgSwitch } from '@angular/common';
 import { ParseComponent } from './parse/parse.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {GrowlModule} from 'primeng/primeng';
-import { InfoPageComponent } from './info-page/info-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SelectItem, DropdownModule, MultiSelectModule, CheckboxModule} from 'primeng/primeng';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
@@ -33,9 +32,7 @@ declare var require : any;
   declarations: [
     AppComponent,
     ToolbarComponent,
-   
     ParseComponent,
-    InfoPageComponent,
     HomePageComponent
   ],
   imports: [

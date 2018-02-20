@@ -1,7 +1,6 @@
 import { ParseComponent } from './parse/parse.component'; //import all components that utilizes this service page
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { InfoPageComponent } from './info-page/info-page.component';
 import { Injectable } from '@angular/core'; //needed for service file to work properly
 import { HomePageComponent } from './home-page/home-page.component';
 import { SelectItem

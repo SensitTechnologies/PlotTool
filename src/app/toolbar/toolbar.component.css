@@ -72,7 +72,7 @@
     position: absolute;
     color: #333;
     top: 3;
-    left: 52px;
+    left: 97px;
     font-size: 36px;
     margin-left: 120px;
 }
@@ -86,7 +86,7 @@
 }
 .sidenavbtn:hover{
     background:white;
-    color:black;
+    color:grey;
 }
 
 .header span:hover,.header button:hover{

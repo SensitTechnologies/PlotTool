@@ -40,6 +40,18 @@
     width:95px;
     height:40px;
     font-size:24px;
+    padding:0px;
+    margin:0px 75px 0px 120px;
+}
+.sidenavbtn2{
+    background:#333;
+    color:#808009;
+    width:95px;
+    height:40px;
+    font-size:24px;
+    padding:0px;
+    margin:0px 75px 0px 120px;
+  
 }
 .sidenavbtn:hover{
     background:white;

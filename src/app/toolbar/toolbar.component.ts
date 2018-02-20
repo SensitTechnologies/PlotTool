@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
 import 'rxjs/Rx';
-import { InfoPageComponent } from '../info-page/info-page.component';
 import { SelectItem, DropdownModule } from 'primeng/primeng';
 import { sData, chartService, readData, goToInfo, goToHome } from '../app.service';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -57,18 +56,6 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
 
   }
-
- goToInfoPage(){
-  this.goToI.redirectInfo=true;
-  console.log("info"+this.goToI.redirectInfo);
-  this.dataProvider.redirectChart=false;
-  this.goToH.redirectHome=false;
-  this.dataProvider.showToolbar=true;
-  this.dataProvider.onHomePage=false;
-  this.dataProvider.onInfoPage=true;
-  document.getElementById("mySidenav2").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
- }
  goToHomePage(){
   this.goToH.redirectHome=true;
   console.log("home"+this.goToH.redirectHome);
