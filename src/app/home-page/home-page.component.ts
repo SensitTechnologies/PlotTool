@@ -11,7 +11,7 @@ export class HomePageComponent implements OnInit {
   innerWidth: any;
   largeLogo: boolean = true;
 
-  constructor(private goToI:goToInfo, private goToH:goToHome, private dataProvider:sData, private rData:readData, private chartData:chartService) { 
+  constructor(private goToI:goToInfo, public dataProvider:sData,public goToH:goToHome, private rData:readData, private chartData:chartService) { 
     if(window.innerWidth<=530) {
       this.largeLogo = false;
     }

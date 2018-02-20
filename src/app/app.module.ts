@@ -18,8 +18,14 @@ import { SelectItem, DropdownModule, MultiSelectModule, CheckboxModule} from 'pr
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { ChartModule } from 'angular2-highcharts';
 import {InputTextModule} from 'primeng/components/inputtext/inputtext';
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+import * as highcharts from 'highcharts';
 //import { RouterModule, Routes } from '@angular/router';
-declare var require : any;
+//declare var require : any;
+// export function highchartsFactory() {
+//   return require('highcharts');
+//   return require('highcharts/modules/exporting');
+// }
 
 //import {MessageService} from 'primeng/components/common/messageservice';
 /*const appRoutes: Routes = [
@@ -36,11 +42,13 @@ declare var require : any;
     HomePageComponent
   ],
   imports: [
+
  /*   RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),*/
-    ChartModule.forRoot(require('highcharts'),require('highcharts/modules/exporting')),
+    // .forRoot(require('highcharts'),require('highcharts/modules/exporting')),
+    ChartModule,
     BrowserModule,       
     MultiSelectModule,
     DxChartModule,
@@ -60,7 +68,7 @@ declare var require : any;
     MultiselectDropdownModule,
     GrowlModule
   ],
-  providers: [chartService, sData, readData,goToInfo, goToHome], //needed for service file to work properly
+  providers: [chartService, sData, readData,goToInfo, goToHome,{  provide: HighchartsStatic, useValue: highcharts}], //needed for service file to work properly
   bootstrap: [AppComponent]
 })
 export class AppModule { }

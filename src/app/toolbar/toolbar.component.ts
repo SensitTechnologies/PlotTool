@@ -35,7 +35,7 @@ export class ToolbarComponent implements OnInit {
   yData:any[]=[];
   wasClicked:boolean=true; //if true, settings button is white (clicked)
  text: string;
-  constructor(private http:Http, private goToI:goToInfo, private goToH:goToHome, private dataProvider:sData, private rData:readData, private chartData:chartService){
+  constructor(private http:Http, private goToI:goToInfo, public dataProvider:sData,public goToH:goToHome, private rData:readData, private chartData:chartService){
     this.dataProvider.plotData=[]; 
     this.xAxisCategories=[];
     this.yData=[];
