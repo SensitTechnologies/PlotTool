@@ -1,0 +1,30 @@
+<div *ngIf="dataProvider.showToolbar" style="padding:0px;margin:0px">
+   
+  <div class=".container-fluid">  <!--Page resizes to fit size of window-->
+     <div class="wrapper" style="-webkit-margin-before:0px;-webkit-margin-after:0px;padding:0px;margin:0px">  
+      <md-toolbar class="header" color="primary"> 
+      <!-- <span>Sensit</span><span style="color:Yellow">Tech</span>-->
+        <img src="assets/images/logo.png" alt="SensitTech" height="50" width="90" (click)="goToHomePage()"/>
+        <span class="example-spacer"></span>
+        <button data-balloon="Home" data-balloon-pos="down" (click)="goToChartPage()" md-icon-button><md-icon>home</md-icon></button>
+        <button data-balloon="Info" data-balloon-pos="down" (click)="goToInfoPage()" md-icon-button><md-icon>info</md-icon></button>
+       <!-- <button data-balloon="Plot" data-balloon-pos="down"(click)="goToChartPage()" md-icon-button><md-icon>insert_chart</md-icon></button>-->
+       <button md-icon-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon></button>
+
+      </md-toolbar>
+    
+      <script src="/node_modules/angular/angular.js"></script> 
+      <script src="/node_modules/angular-aria/angular-aria.js"></script> 
+      <script src="/node_modules/angular-animate/angular-animate.js"></script> 
+      <script src="/node_modules/angular-material/angular-material.js"></script> 
+
+      <md-menu #appMenu="mdMenu">
+        <p> Add user options here</p>
+        <button md-menu-item> Settings </button>
+        <button md-menu-item> Logout </button>
+      </md-menu>
+    </div>
+
+  
+</div> 
+</div>

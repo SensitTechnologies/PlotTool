@@ -1,0 +1,25 @@
+.example-spacer{flex: 1 1 auto;}
+.sidebar {grid-area: sidebar;}
+
+.content {grid-area: content;}
+
+
+.header {grid-area: header;
+    padding:0px;
+    margin:0px;
+  /*  position:absolute;
+
+    top:0;*/
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 0px;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+    "header header"
+    "sidebar content"; 
+}
+
+.noPadding{padding:0px;}

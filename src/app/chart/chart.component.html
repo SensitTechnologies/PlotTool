@@ -1,0 +1,47 @@
+<div *ngIf=dataProvider.redirectChart>
+
+    <div class=".container-fluid">        <!--Page resizes to fit size of window-->
+		<div *ngIf="rData.showHide"> 
+			<div *ngIf="dataProvider.selectChartType">
+				  <p style="color:darkblue;font-size:20px;padding:0px;margin:0px 75px"><u>Please select a chart type:</u></p>                      
+				  <div style="padding:0px;margin:0px 120px">
+					  <p-dropdown [options]="chartTypes" [(ngModel)]="chartTypes.name" placeholder="Select" (onChange)="dataChanger($event.value);plotButtonFalse()"></p-dropdown>
+				  </div>
+		      
+				  <p style="-webkit-margin-before:0px;-webkit-margin-after:0px;padding:0px;margin:0px 120px"><span>Selected Type: </span><span class="capitalize" style="color:darkblue">{{type}}</span></p> <!--Different plot types-->
+				  <button class="uppercase button5" style="width:95px;height:35px;font-size:22px;padding:0px;margin:0px 75px 0px 120px" (click)="plotButtonTrue()"><b>Plot</b></button>
+			</div>
+		  </div>
+	<!--		<div *ngIf="dataProvider.plotNow"> 
+					<div id="container" style="width:100%; height:400px"></div>
+			</div>-->
+			<chart id="container" [options]="options" ></chart>
+	</div>
+
+</div>
+
+<!--<div *ngIf=dataProvider.redirectChart>
+    <div class=".container-fluid">      
+		<div *ngIf="rData.showHide"> 
+			<div *ngIf="dataProvider.showDropDown; else disableDropDown">  
+					<p style="color:darkblue;font-size:20px;padding:0px;margin:0px 75px"><u>Please select a chart type:</u></p>                      
+					<div style="padding:0px;margin:0px 120px">
+						<p-dropdown [options]="chartTypes" [(ngModel)]="chartTypes.name" placeholder="Select" (onChange)="dataChanger($event.value);plotButtonFalse()"></p-dropdown>
+					</div>
+				</div>
+				<ng-template #disableDropDown>               
+					<p style="color:grey;font-size:20px;padding:0px;margin:0px 75px"><u>Please select a chart type:</u></p>
+					<div style="padding:0px;margin:0px 120px">    
+						<p-dropdown [options]="chartTypes" [(ngModel)]="chartTypes.name" placeholder="Select" (onChange)="dataChanger($event.value);plotButtonFalse()" disabled></p-dropdown>
+					</div>
+				</ng-template>            
+					<p style="-webkit-margin-before:0px;-webkit-margin-after:0px;padding:0px;margin:0px 120px"><span>Selected Type: </span><span class="capitalize" style="color:darkblue">{{type}}</span></p>
+					<button class="uppercase button5" style="width:95px;height:35px;font-size:22px;padding:0px;margin:0px 75px 0px 120px" (click)="plotButtonTrue()"><b>Plot</b></button>
+			  
+			</div>
+	  		<div *ngIf="dataProvider.plotNow"> 
+					  <div id="container" style="width:100%; height:400px"></div>
+			  </div>
+			  <chart id="container" [options]="options" ></chart>
+	  </div>
+  </div>-->

@@ -1,0 +1,15 @@
+.button {
+    background-color:Black;
+    color:yellow;
+   
+}
+
+#centered{
+     display:flex;
+     justify-content: center; 
+     vertical-align: middle;
+} 
+#main {
+    transition: margin-right .5s;
+    padding: 16px;
+}

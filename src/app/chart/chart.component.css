@@ -1,0 +1,40 @@
+#scrollableContent {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+#table-div {
+    height: 400px;
+    width: 600px;
+    overflow: hidden;
+}
+
+#table-headers {
+    height: 60px;
+    width: 600px;
+    overflow: hidden;
+}
+
+#table-main {
+    border: 1px solid #777777;
+}
+
+#table-main-headers {
+    border: 1px solid #777777;
+    height: 400px;
+    width: 800px;
+}
+
+th {
+    background-color: #888888;
+    color: #ffffff;
+    height:30px;
+}
+
+#container { 
+    height:100%;
+    width:100%;
+    position:absolute;
+}
