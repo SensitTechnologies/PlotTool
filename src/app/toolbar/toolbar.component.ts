@@ -15,7 +15,7 @@ import {sData, chartService, readData, goToInfo, goToHome} from '../app.service'
 })
 export class ToolbarComponent implements OnInit {
   myData: Array<any>;
-  constructor(private http:Http, private goToI:goToInfo, private goToH:goToHome, private dataProvider:sData, private rData:readData, private chartData:chartService){
+  constructor(private http:Http, private goToI:goToInfo, public goToH:goToHome, public dataProvider:sData, private rData:readData, private chartData:chartService){
     this.http.get('https://jsonplaceholder.typicode.com/photos')
     .map((response:Response)=>response.json())
     .subscribe(res => this.myData = res);

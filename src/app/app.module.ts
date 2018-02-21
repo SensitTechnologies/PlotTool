@@ -18,7 +18,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SelectItem, DropdownModule, MultiSelectModule, CheckboxModule} from 'primeng/primeng';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { ChartModule } from 'angular2-highcharts';
-declare var require : any;
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+import * as highcharts from 'highcharts';
+
+//declare var require : any;
 
 //import {MessageService} from 'primeng/components/common/messageservice';
 
@@ -32,7 +35,7 @@ declare var require : any;
     HomePageComponent
   ],
   imports: [
-    ChartModule.forRoot(require('highcharts'),require('highcharts/modules/exporting')),
+    ChartModule,
     BrowserModule,       
     MultiSelectModule,
     DxChartModule,
@@ -51,7 +54,7 @@ declare var require : any;
     MultiselectDropdownModule,
     GrowlModule
   ],
-  providers: [chartService, sData, readData,goToInfo, goToHome], //needed for service file to work properly
+  providers: [chartService, sData, readData,goToInfo, goToHome, { provide: HighchartsStatic, useValue: highcharts}], //needed for service file to work properly
   bootstrap: [AppComponent]
 })
 export class AppModule { }

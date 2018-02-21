@@ -27,7 +27,7 @@ export class ChartComponent implements OnInit {
   xAxisCategories:any=[];
   tempYdata:any[]=[];
   yData:any[]=[];
-  constructor(private dataProvider:sData, private rData:readData, private chartData:chartService,private goToI:goToInfo, private goToH:goToHome) {
+  constructor(public dataProvider:sData, private rData:readData, private chartData:chartService,private goToI:goToInfo, private goToH:goToHome) {
     this.dataProvider.plotData=[]; 
     this.xAxisCategories=[];
     this.yData=[];

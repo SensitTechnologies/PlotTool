@@ -8,7 +8,7 @@ import { Component, OnInit, NgModule, ViewChild, Injectable} from '@angular/core
 })
 export class InfoPageComponent implements OnInit {
 
-  constructor(private goToI:goToInfo, private dataProvider:sData, private rData:readData,private goToH:goToHome, private chartData:chartService) { }
+  constructor(public goToI:goToInfo, public dataProvider:sData, private rData:readData,private goToH:goToHome, private chartData:chartService) { }
 
   ngOnInit() {
   }

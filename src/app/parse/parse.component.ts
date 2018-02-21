@@ -52,7 +52,7 @@ export class ParseComponent implements OnInit {
   values1:SelectItem[]=[];
   values2: SelectItem[]=[];
   
-  constructor(private dataProvider:sData, private goToH:goToHome, private rData:readData, private chartData:chartService, private goToI:goToInfo) { 
+  constructor(public dataProvider:sData, private goToH:goToHome, private rData:readData, private chartData:chartService, private goToI:goToInfo) { 
     this.fileString;
     this.parsedFileString;
     this.parsedFileString2;
