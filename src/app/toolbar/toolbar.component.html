@@ -5,18 +5,18 @@
      
       <!-- <span>Sensit</span><span style="color:Yellow">Tech</span>-->
         <div *ngIf="dataProvider.onHomePage">
-          <md-toolbar class="header" style="background:grey; color:black"> 
+          <mat-toolbar class="header" style="background:grey; color:black"> 
             <div *ngIf="wasClicked; else closed">
-              <button class="clicked" data-balloon="Settings" data-balloon-pos="right" style="cursor:pointer" (click)="openNav2()" md-icon-button><md-icon>view_headline</md-icon></button>
+              <button class="clicked" data-balloon="Settings" data-balloon-pos="right" style="cursor:pointer" (click)="openNav2()" mat-icon-button><mat-icon>view_headline</mat-icon></button>
             </div>
             <ng-template #closed>
-              <button class="notClicked" data-balloon="Settings" data-balloon-pos="right" style="cursor:pointer" (click)="openNav2()" md-icon-button><md-icon>view_headline</md-icon></button>
+              <button class="notClicked" data-balloon="Settings" data-balloon-pos="right" style="cursor:pointer" (click)="openNav2()" mat-icon-button><mat-icon>view_headline</mat-icon></button>
             </ng-template>          
             <span class="example-spacer"></span>
        
             <img src="assets/images/logo.png" alt="SensitTech" style="cursor:pointer"  height="50" width="90" (click)="goToHomePage()"/>
             
-        </md-toolbar>
+        </mat-toolbar>
         <div *ngIf="dataProvider.showChart">
           <chart id="container" [options]="options"></chart> 
         </div>
@@ -28,16 +28,16 @@
       <script src="/node_modules/angular-animate/angular-animate.js"></script> 
       <script src="/node_modules/angular-material/angular-material.js"></script> 
 
-      <md-menu #appMenu="mdMenu">
+      <mat-menu #appMenu="matMenu">
         <p> Add user options here</p>
-        <button md-menu-item> Settings </button>
-        <button md-menu-item> Logout </button>
-      </md-menu>
+        <button mat-menu-item> Settings </button>
+        <button mat-menu-item> Logout </button>
+      </mat-menu>
     </div>
 
     <div id="mySidenav2" class="sidenav" style="width:350px"> <!--side menu-->
         <a href="javascript:void(0)" class="closebtn" (click)="closeNav2()">&times;</a>
-        <button class="refreshbtn" (click)="refresh()" style="cursor:pointer" md-icon-button><md-icon>refresh</md-icon></button> 
+        <button class="refreshbtn" (click)="refresh()" style="cursor:pointer" mat-icon-button><mat-icon>refresh</mat-icon></button> 
         <h2 color="black" style="padding:0px 95px 0px;font-size:36px"><b><u>Settings</u></b></h2>   
         <div style="margin:30px"></div>
         <app-parse></app-parse> 

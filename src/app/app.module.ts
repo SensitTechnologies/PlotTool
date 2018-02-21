@@ -5,7 +5,7 @@ import { chartService, sData, readData, goToInfo, goToHome} from './app.service'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { DxChartModule, DxChartComponent, DxRangeSelectorModule } from 'devextreme-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { FormsModule,FormControl } from '@angular/forms';
 import { CommonModule, NgSwitch } from '@angular/common';
@@ -55,11 +55,11 @@ import * as highcharts from 'highcharts';
     BrowserAnimationsModule,
     HttpModule,
     FormsModule,
-    MdButtonModule, 
-    MdCardModule, 
-    MdMenuModule, 
-    MdToolbarModule,
-    MdIconModule,
+    MatButtonModule, 
+    MatCardModule, 
+    MatMenuModule, 
+    MatToolbarModule,
+    MatIconModule,
    InputTextModule,
     CommonModule,
     CheckboxModule,

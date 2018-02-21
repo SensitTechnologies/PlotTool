@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import 'rxjs/Rx';
 import { SelectItem, DropdownModule } from 'primeng/primeng';
 import { sData, chartService, readData, goToInfo, goToHome } from '../app.service';
