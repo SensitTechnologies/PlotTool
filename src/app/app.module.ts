@@ -72,5 +72,4 @@ import * as highcharts from 'highcharts';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-platformBrowserDynamic().bootstrapModule(AppModule);
 
