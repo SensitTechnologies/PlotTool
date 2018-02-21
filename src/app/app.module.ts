@@ -39,7 +39,7 @@ import * as highcharts from 'highcharts';
     AppComponent,
     ToolbarComponent,
     ParseComponent,
-    HomePageComponent
+    HomePageComponent//comment
   ],
   imports: [
 
